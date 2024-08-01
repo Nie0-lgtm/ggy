@@ -17,6 +17,7 @@ import com.ruoyi.common.xss.Xss;
  * 
  * @author ruoyi
  */
+
 public class SysUser extends BaseEntity
 {
     private static final long serialVersionUID = 1L;
@@ -48,6 +49,8 @@ public class SysUser extends BaseEntity
     /** 用户性别 */
     @Excel(name = "用户性别", readConverterExp = "0=男,1=女,2=未知")
     private String sex;
+    @Excel(name = "公司代码")
+    private String company;
 
     /** 用户头像 */
     private String avatar;
@@ -102,6 +105,14 @@ public class SysUser extends BaseEntity
     public Long getUserId()
     {
         return userId;
+    }
+
+    public String getCompany() {
+        return company;
+    }
+
+    public void setCompany(String company) {
+        this.company = company;
     }
 
     public void setUserId(Long userId)

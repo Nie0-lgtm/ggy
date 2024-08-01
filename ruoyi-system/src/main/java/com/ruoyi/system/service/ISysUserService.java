@@ -1,6 +1,8 @@
 package com.ruoyi.system.service;
 
 import java.util.List;
+
+import com.baomidou.mybatisplus.extension.service.IService;
 import com.ruoyi.common.core.domain.entity.SysUser;
 
 /**
@@ -8,7 +10,7 @@ import com.ruoyi.common.core.domain.entity.SysUser;
  * 
  * @author ruoyi
  */
-public interface ISysUserService
+public interface ISysUserService extends IService<SysUser>
 {
     /**
      * 根据条件分页查询用户列表
@@ -203,4 +205,13 @@ public interface ISysUserService
      * @return 结果
      */
     public String importUser(List<SysUser> userList, Boolean isUpdateSupport, String operName);
+
+    /**
+     * 用户名称验证公司代码
+     * @param userName
+     * @param company
+     * @return
+     */
+
+    public boolean verifyUserNameCompany(String userName,String company);
 }

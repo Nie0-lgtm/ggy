@@ -29,6 +29,11 @@
             <artifactId>spring-web</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-boot-starter</artifactId>
+        </dependency>
+
         <!-- spring security 安全认证 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
