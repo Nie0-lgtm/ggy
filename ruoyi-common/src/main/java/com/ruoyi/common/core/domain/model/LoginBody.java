@@ -8,6 +8,11 @@ package com.ruoyi.common.core.domain.model;
 public class LoginBody
 {
     /**
+     *公司代码
+     */
+    private String  company;
+
+    /**
      * 用户名
      */
     private String username;
@@ -66,4 +71,12 @@ public class LoginBody
     {
         this.uuid = uuid;
     }
+    public String getCompany() {
+        return company;
+    }
+
+    public void setCompany(String company) {
+        this.company = company;
+    }
+
 }

@@ -1,7 +1,17 @@
 <template>
   <div class="login">
     <el-form ref="loginForm" :model="loginForm" :rules="loginRules" class="login-form">
-      <h3 class="title">若依后台管理系统</h3>
+      <h3 class="title">高格轻云系统</h3>
+      <el-form-item prop="company">
+        <el-input
+          v-model="loginForm.company"
+          type="text"
+          auto-complete="off"
+          placeholder="公司代码"
+        >
+          <svg-icon slot="prefix" icon-class="user" class="el-input__icon input-icon" />
+        </el-input>
+      </el-form-item>
       <el-form-item prop="username">
         <el-input
           v-model="loginForm.username"
@@ -72,6 +82,7 @@ export default {
     return {
       codeUrl: "",
       loginForm: {
+        company:"",
         username: "admin",
         password: "admin123",
         rememberMe: false,
@@ -79,6 +90,9 @@ export default {
         uuid: ""
       },
       loginRules: {
+        company:[
+          { required: true, trigger: "blur", message: "请输入您的公司代码" }
+        ],
         username: [
           { required: true, trigger: "blur", message: "请输入您的账号" }
         ],
@@ -140,6 +154,7 @@ export default {
             Cookies.remove("password");
             Cookies.remove('rememberMe');
           }
+          console.log(this.loginForm);
           this.$store.dispatch("Login", this.loginForm).then(() => {
             this.$router.push({ path: this.redirect || "/" }).catch(()=>{});
           }).catch(() => {
@@ -171,7 +186,7 @@ export default {
 }
 
 .login-form {
-  border-radius: 6px;
+  border-radius: 20px;
   background: #ffffff;
   width: 400px;
   padding: 25px 25px 5px 25px;
