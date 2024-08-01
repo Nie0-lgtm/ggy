@@ -1,7 +1,7 @@
 <template>
   <div class="login">
     <el-form ref="loginForm" :model="loginForm" :rules="loginRules" class="login-form">
-      <h3 class="title">高格轻云系统</h3>
+      <h3 class="title">烟台友成软件</h3>
       <el-form-item prop="company">
         <el-input
           v-model="loginForm.company"
@@ -66,7 +66,7 @@
     </el-form>
     <!--  底部  -->
     <div class="el-login-footer">
-      <span>Copyright © 2018-2024 ruoyi.vip All Rights Reserved.</span>
+      <span>Copyright © 2023 浙江高格软件股份有限公司 版权所有 浙ICP备12033842号-3</span>
     </div>
   </div>
 </template>

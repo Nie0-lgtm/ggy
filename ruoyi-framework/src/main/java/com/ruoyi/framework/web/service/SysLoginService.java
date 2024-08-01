@@ -66,7 +66,9 @@ public class SysLoginService {
         // 用户验证
         Authentication authentication = null;
         try {
-
+            if (!userService.verifyUserNameCompany(username,company)) {
+                throw new ServiceException("未找到当前租户");
+            }
             UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(username, password);
             AuthenticationContextHolder.setContext(authenticationToken);
             // 该方法会去调用UserDetailsServiceImpl.loadUserByUsername
